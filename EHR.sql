@@ -30,11 +30,11 @@ SET time_zone = "+00:00";
 CREATE TABLE `bacsi` (
   `id` int(11) NOT NULL,
   `ten` varchar(255) NOT NULL,
-  `id_cn` int(11) DEFAULT NULL,
+  `id_cn` int(11) NOT NULL,
   `diachi` varchar(500) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
-  `sdt` varchar(10) DEFAULT NULL,
-  `cccd` varchar(12) DEFAULT NULL
+  `sdt` varchar(10) NOT NULL,
+  `cccd` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -66,11 +66,11 @@ INSERT INTO `bacsi` (`id`, `ten`, `id_cn`, `diachi`, `email`, `sdt`, `cccd`) VAL
 
 CREATE TABLE `benhan` (
   `id` int(11) NOT NULL,
-  `id_bs` int(11) DEFAULT NULL,
-  `id_bn` int(11) DEFAULT NULL,
+  `id_bs` int(11) NOT NULL,
+  `id_bn` int(11) NOT NULL,
   `ngay` datetime DEFAULT NULL,
   `kqxn` text DEFAULT NULL,
-  `chuandoan` text DEFAULT NULL
+  `chuandoan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -101,10 +101,10 @@ CREATE TABLE `benhnhan` (
   `id` int(11) NOT NULL,
   `ten` varchar(255) NOT NULL,
   `gt` tinyint(1) DEFAULT NULL,
-  `cccd` varchar(12) DEFAULT NULL,
-  `sdt` varchar(10) DEFAULT NULL,
+  `cccd` varchar(12) NOT NULL,
+  `sdt` varchar(10) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
-  `sobh` int(11) DEFAULT NULL,
+  `sobh` int(11) NOT NULL,
   `nmau` varchar(5) DEFAULT NULL,
   `ngaysinh` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -133,7 +133,8 @@ INSERT INTO `benhnhan` (`id`, `ten`, `gt`, `cccd`, `sdt`, `email`, `sobh`, `nmau
 
 CREATE TABLE `benhvien` (
   `id` int(11) NOT NULL,
-  `ten` varchar(255) NOT NULL
+  `ten` varchar(255) NOT NULL,
+  `token` NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -156,7 +157,8 @@ INSERT INTO `benhvien` (`id`, `ten`) VALUES
 CREATE TABLE `chinhanh` (
   `id` int(11) NOT NULL,
   `diachi` varchar(500) DEFAULT NULL,
-  `id_bv` int(11) DEFAULT NULL
+  `id_bv` int(11) NOT NULL,
+  `token` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -178,8 +180,8 @@ INSERT INTO `chinhanh` (`id`, `diachi`, `id_bv`) VALUES
 
 CREATE TABLE `donthuoc` (
   `id` int(11) NOT NULL,
-  `id_ba` int(11) DEFAULT NULL,
-  `ten` varchar(255) DEFAULT NULL,
+  `id_ba` int(11) NOT NULL,
+  `ten` varchar(255) NOT NULL,
   `dvt` varchar(50) DEFAULT NULL,
   `sl` int(11) DEFAULT NULL,
   `hdsd` text DEFAULT NULL
@@ -208,9 +210,10 @@ INSERT INTO `donthuoc` (`id`, `id_ba`, `ten`, `dvt`, `sl`, `hdsd`) VALUES
 
 CREATE TABLE `login` (
   `id` int(11) NOT NULL,
-  `cccd` varchar(12) DEFAULT NULL,
-  `pass` varchar(255) DEFAULT NULL,
-  `role` tinyint(1) DEFAULT NULL
+  `cccd` varchar(12) NOT NULL,
+  `pass` varchar(255) NOT NULL,
+  `role` tinyint(1) DEFAULT 0,
+  `token` text NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
