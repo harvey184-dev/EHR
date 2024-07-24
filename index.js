@@ -72,7 +72,11 @@ app.post('/register', (req, res) => {
         return res.status(400).json({ message: 'Vui lòng điền đầy đủ thông tin bắt buộc' });
     }
 
+<<<<<<< HEAD
     const sqlInsertLogin = `INSERT INTO login (cccd, pass, role) VALUES(?, ?, 1)`;
+=======
+    const sqlInsertLogin = `INSERT INTO login (cccd, pass) VALUES(?, ?)`;
+>>>>>>> a82a4875db38dffea7c4e820a3dc6d7e1ba8fe4c
     db.query(sqlInsertLogin, [cccd, pass], (err, loginResults) => {
         if (err) {
             return res.status(500).json({ message: 'Lỗi khi thêm vào bảng login', error: err });
@@ -129,6 +133,7 @@ app.post('/registerBacsi', (req, res) => {
     });
 });
 
+<<<<<<< HEAD
 // Thêm bệnh án
 app.post('/add-medical-records', (req, res) => {
     let { id_bs, id_bn, ngay, chuandoan, kqxn = [], xquang = [], donthuoc = [] } = req.body
@@ -178,6 +183,10 @@ app.post('/add-medical-records', (req, res) => {
 
 // Tất cả bệnh án của bệnh nhân
 app.get('/all-medical-records/:id', function (req, res) {
+=======
+// Tất cả bệnh án của bệnh nhân
+app.get('/medical-records/:id', function (req, res) {
+>>>>>>> a82a4875db38dffea7c4e820a3dc6d7e1ba8fe4c
     let id = req.params.id
     sql = `SELECT * FROM benhan WHERE id_bn = ${id} `
     db.query(sql, function (err, data) {
@@ -186,6 +195,7 @@ app.get('/all-medical-records/:id', function (req, res) {
     })
 })
 
+<<<<<<< HEAD
 // Chi tiết bệnh án
 app.get('/medical-records/:id', function (req, res) {
 
@@ -233,6 +243,8 @@ app.get('/medical-records/:id', function (req, res) {
     })
 })
 
+=======
+>>>>>>> a82a4875db38dffea7c4e820a3dc6d7e1ba8fe4c
 // Các bệnh án mà 1 bác sĩ đã phê cho 1 bệnh nhân
 app.get('/doctor-medical-records/:idBs/:idBn', function (req, res) {
     let id_Bs = req.params.idBs
@@ -259,6 +271,7 @@ app.delete('/deleteBS/:cccd', function (req, res) {
         }
     })
 })
+<<<<<<< HEAD
 
 // Thay đổi thông tin bệnh nhân
 app.put('/edit-information/:id', function (req, res) {
@@ -287,6 +300,8 @@ app.put('/edit-information/:id', function (req, res) {
     });
 
 })
+=======
+>>>>>>> a82a4875db38dffea7c4e820a3dc6d7e1ba8fe4c
 
 app.listen(port, () => {
     console.log(`Ứng dụng đã chạy với port ${port} `);
