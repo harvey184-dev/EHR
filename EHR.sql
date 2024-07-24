@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 11, 2024 lúc 08:24 AM
+-- Thời gian đã tạo: Th7 24, 2024 lúc 09:09 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `demo`
+-- Cơ sở dữ liệu: `demo1`
 --
 
 -- --------------------------------------------------------
@@ -34,6 +34,7 @@ CREATE TABLE `bacsi` (
   `diachi` varchar(500) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `sdt` varchar(10) NOT NULL,
+  `id_k` int(11) NOT NULL,
   `cccd` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -41,22 +42,17 @@ CREATE TABLE `bacsi` (
 -- Đang đổ dữ liệu cho bảng `bacsi`
 --
 
-INSERT INTO `bacsi` (`id`, `ten`, `id_cn`, `diachi`, `email`, `sdt`, `cccd`) VALUES
-(1, 'Nguyễn Văn A', 1, 'Số 1, Phố Chùa Bộc, Đống Đa, Hà Nội', 'nguyenvana@hospital.com', '0987654321', '123456789012'),
-(2, 'Trần Thị B', 1, 'Số 1, Phố Chùa Bộc, Đống Đa, Hà Nội', 'tranthib@hospital.com', '0987654322', '123456789013'),
-(3, 'Lê Văn C', 1, 'Số 1, Phố Chùa Bộc, Đống Đa, Hà Nội', 'levanc@hospital.com', '0987654323', '123456789014'),
-(4, 'Phạm Thị D', 2, '78 Đường Giải Phóng, Phương Mai, Đống Đa, Hà Nội', 'phamthid@hospital.com', '0987654324', '123456789015'),
-(5, 'Hoàng Văn E', 2, '78 Đường Giải Phóng, Phương Mai, Đống Đa, Hà Nội', 'hoangvane@hospital.com', '0987654325', '123456789016'),
-(6, 'Mai Thị F', 2, '78 Đường Giải Phóng, Phương Mai, Đống Đa, Hà Nội', 'maithif@hospital.com', '0987654326', '123456789017'),
-(7, 'Vũ Văn G', 3, '40 Tràng Thi, Hoàn Kiếm, Hà Nội', 'vuvang@hospital.com', '0987654327', '123456789018'),
-(8, 'Ngọc Hạnh', 3, '40 Tràng Thi, Hoàn Kiếm, Hà Nội', 'ngochanh@hospital.com', '0987654328', '123456789019'),
-(9, 'Đặng Xuân H', 3, '40 Tràng Thi, Hoàn Kiếm, Hà Nội', 'dangxuanh@hospital.com', '0987654329', '123456789020'),
-(10, 'Phan Thanh I', 4, '16 Lê Lợi, TP. Huế, Thừa Thiên Huế', 'phanthani@hospital.com', '0987654330', '123456789021'),
-(11, 'Nguyễn Thị K', 4, '16 Lê Lợi, TP. Huế, Thừa Thiên Huế', 'nguyenthik@hospital.com', '0987654331', '123456789022'),
-(12, 'Trần Văn L', 4, '16 Lê Lợi, TP. Huế, Thừa Thiên Huế', 'tranvanl@hospital.com', '0987654332', '123456789023'),
-(13, 'Lê Thị M', 5, 'Số 1 Đại lộ Lê Nin, Thành phố Bắc Ninh, Bắc Ninh', 'lethim@hospital.com', '0987654333', '123456789024'),
-(14, 'Hoàng Văn N', 5, 'Số 1 Đại lộ Lê Nin, Thành phố Bắc Ninh, Bắc Ninh', 'hoangvann@hospital.com', '0987654334', '123456789025'),
-(15, 'Nguyễn Văn P', 5, 'Số 1 Đại lộ Lê Nin, Thành phố Bắc Ninh, Bắc Ninh', 'nguyenvanp@hospital.com', '0987654335', '123456789026');
+INSERT INTO `bacsi` (`id`, `ten`, `id_cn`, `diachi`, `email`, `sdt`, `id_k`, `cccd`) VALUES
+(11, 'Le Thi K', 1, '123 Le Loi, District 1, HCMC', 'lethik@example.com', '0915123451', 1, '012345678911'),
+(12, 'Nguyen Van L', 2, '456 Hai Ba Trung, District 3, HCMC', 'nguyenvanl@example.com', '0916123452', 2, '012345678912'),
+(13, 'Pham Thi M', 3, '789 Nguyen Trai, District 5, HCMC', 'phamthim@example.com', '0917123453', 3, '012345678913'),
+(14, 'Tran Van N', 4, '101 Vo Van Tan, District 1, HCMC', 'tranvann@example.com', '0918123454', 4, '012345678914'),
+(15, 'Hoang Thi O', 5, '202 Le Thanh Ton, District 1, HCMC', 'hoangthio@example.com', '0919123455', 5, '012345678915'),
+(16, 'Do Van P', 6, '303 Dong Khoi, District 1, HCMC', 'dovanp@example.com', '0920123456', 6, '012345678916'),
+(17, 'Vo Thi Q', 7, '404 Pasteur, District 3, HCMC', 'vothiq@example.com', '0921123457', 7, '012345678917'),
+(18, 'Nguyen Thi R', 8, '505 Nguyen Dinh Chieu, District 3, HCMC', 'nguyenthir@example.com', '0922123458', 8, '012345678918'),
+(19, 'Bui Van S', 9, '606 Pham Ngu Lao, District 1, HCMC', 'buivans@example.com', '0923123459', 9, '012345678919'),
+(20, 'Duong Thi T', 10, '707 Le Van Sy, District 3, HCMC', 'duongthit@example.com', '0924123460', 10, '012345678920');
 
 -- --------------------------------------------------------
 
@@ -69,7 +65,6 @@ CREATE TABLE `benhan` (
   `id_bs` int(11) NOT NULL,
   `id_bn` int(11) NOT NULL,
   `ngay` datetime DEFAULT NULL,
-  `kqxn` text DEFAULT NULL,
   `chuandoan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -77,19 +72,20 @@ CREATE TABLE `benhan` (
 -- Đang đổ dữ liệu cho bảng `benhan`
 --
 
-INSERT INTO `benhan` (`id`, `id_bs`, `id_bn`, `ngay`, `kqxn`, `chuandoan`) VALUES
-(1, 1, 1, '2024-07-11 10:00:00', 'Xét nghiệm thường', 'Cảm cúm đơn giản'),
-(2, 2, 1, '2024-07-12 11:00:00', 'Đo huyết áp', 'Huyết áp cao'),
-(3, 3, 1, '2024-07-13 12:00:00', 'Siêu âm bụng', 'Đau bụng dạ dày'),
-(4, 2, 2, '2024-07-11 10:30:00', 'Đo đường huyết', 'Đái tháo đường'),
-(5, 3, 3, '2024-07-12 11:30:00', 'Siêu âm tim', 'Bệnh tim mạch'),
-(6, 1, 4, '2024-07-13 12:30:00', 'Xét nghiệm máu', 'Bệnh lý gan'),
-(7, 2, 5, '2024-07-14 13:00:00', 'Xét nghiệm tiểu đường', 'Tiểu đường'),
-(8, 3, 6, '2024-07-15 14:00:00', 'Siêu âm bụng', 'Bệnh đường tiêu hóa'),
-(9, 1, 7, '2024-07-16 15:00:00', 'Xét nghiệm nội tiết', 'Rối loạn nội tiết'),
-(10, 2, 8, '2024-07-17 16:00:00', 'Đo huyết áp', 'Huyết áp cao'),
-(11, 3, 9, '2024-07-18 17:00:00', 'Xét nghiệm sàng lọc ung thư', 'Ung thư cổ tử cung'),
-(12, 1, 10, '2024-07-19 18:00:00', 'Siêu âm thai', 'Sức khỏe thai nhi');
+INSERT INTO `benhan` (`id`, `id_bs`, `id_bn`, `ngay`, `chuandoan`) VALUES
+(4, 11, 2, '2024-07-25 10:00:00', 'Cảm cúm'),
+(5, 11, 2, '2024-07-25 10:00:00', 'Sốt'),
+(7, 11, 1, '2024-07-25 10:00:00', 'Cảm cúm'),
+(8, 12, 2, '2024-07-26 11:00:00', 'Viêm họng'),
+(9, 14, 4, '2024-07-28 15:00:00', 'Dị ứng'),
+(10, 13, 3, '2024-07-27 14:00:00', 'Đau dạ dày'),
+(11, 15, 5, '2024-07-29 16:00:00', 'Gãy xương'),
+(12, 16, 6, '2024-07-30 09:00:00', 'Đau đầu'),
+(13, 17, 7, '2024-07-31 12:00:00', 'Ho'),
+(14, 18, 8, '2024-08-01 13:00:00', 'Mệt mỏi'),
+(15, 19, 9, '2024-08-02 17:00:00', 'Viêm khớp'),
+(16, 20, 10, '2024-08-03 18:00:00', 'Cảm lạnh'),
+(17, 11, 1, '2024-07-25 10:00:00', 'Viêm họng cấp');
 
 -- --------------------------------------------------------
 
@@ -114,16 +110,17 @@ CREATE TABLE `benhnhan` (
 --
 
 INSERT INTO `benhnhan` (`id`, `ten`, `gt`, `cccd`, `sdt`, `email`, `sobh`, `nmau`, `ngaysinh`) VALUES
-(1, 'Nguyễn Văn An', 1, '123456789011', '0987654321', 'nguyenvanan@example.com', 1001, 'A', '1990-05-15'),
-(2, 'Trần Thị Bình', 0, '123456789012', '0987654322', 'tranthibinh@example.com', 1002, 'B', '1985-10-20'),
-(3, 'Lê Văn Cường', 1, '123456789013', '0987654323', 'levancuong@example.com', 1003, 'AB', '1992-12-25'),
-(4, 'Phạm Thị Dung', 0, '123456789014', '0987654324', 'phamthidung@example.com', 1004, 'O', '1988-03-30'),
-(5, 'Hoàng Văn Đức', 1, '123456789015', '0987654325', 'hoangvanduc@example.com', 1005, 'A', '1995-08-05'),
-(6, 'Mai Thị Lan', 0, '123456789016', '0987654326', 'maithilan@example.com', 1006, 'B', '1987-07-10'),
-(7, 'Nguyễn Thanh Hải', 1, '123456789017', '0987654327', 'nguyenthanhhai@example.com', 1007, 'AB', '1991-09-18'),
-(8, 'Trần Minh Hoa', 0, '123456789018', '0987654328', 'tranminhhoa@example.com', 1008, 'O', '1993-04-22'),
-(9, 'Lê Thị Kim Anh', 0, '123456789019', '0987654329', 'lethikimanh@example.com', 1009, 'A', '1989-06-08'),
-(10, 'Vũ Văn Bảo', 1, '123456789020', '0987654330', 'vuvanbao@example.com', 1010, 'B', '1994-01-12');
+(1, 'Diệp Thiếu Kiệt', NULL, '079304011052', '0878623892', NULL, 0, 'A', NULL),
+(2, 'Nguyen Van A', 1, '012345678901', '0905123456', 'nguyenvana@example.com', 123456789, 'O+', '1990-01-01'),
+(3, 'Tran Thi B', 0, '012345678902', '0906123457', 'tranthib@example.com', 223456789, 'A+', '1992-02-02'),
+(4, 'Le Van C', 1, '012345678903', '0907123458', 'levanc@example.com', 323456789, 'B+', '1994-03-03'),
+(5, 'Pham Thi D', 0, '012345678904', '0908123459', 'phamthid@example.com', 423456789, 'AB+', '1996-04-04'),
+(6, 'Hoang Van E', 1, '012345678905', '0909123460', 'hoangvane@example.com', 523456789, 'O-', '1988-05-05'),
+(7, 'Do Thi F', 0, '012345678906', '0910123461', 'dothif@example.com', 623456789, 'A-', '1989-06-06'),
+(8, 'Vo Van G', 1, '012345678907', '0911123462', 'vovang@example.com', 723456789, 'B-', '1991-07-07'),
+(9, 'Ngo Thi H', 0, '012345678908', '0912123463', 'ngothih@example.com', 823456789, 'AB-', '1993-08-08'),
+(10, 'Bui Van I', 1, '012345678909', '0913123464', 'buivani@example.com', 923456789, 'O+', '1995-09-09'),
+(11, 'Duong Thi J', 0, '012345678910', '0914123465', 'duongthij@example.com', 1023456789, 'A+', '1997-10-10');
 
 -- --------------------------------------------------------
 
@@ -133,8 +130,7 @@ INSERT INTO `benhnhan` (`id`, `ten`, `gt`, `cccd`, `sdt`, `email`, `sobh`, `nmau
 
 CREATE TABLE `benhvien` (
   `id` int(11) NOT NULL,
-  `ten` varchar(255) NOT NULL,
-  `token` NOT NULL
+  `ten` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -142,11 +138,11 @@ CREATE TABLE `benhvien` (
 --
 
 INSERT INTO `benhvien` (`id`, `ten`) VALUES
-(1, 'Bệnh viện Đại học Y Hà Nội'),
-(2, 'Bệnh viện Bạch Mai'),
-(3, 'Bệnh viện Việt Đức'),
-(4, 'Bệnh viện Trung ương Huế'),
-(5, 'Bệnh viện Đa khoa tỉnh Bắc Ninh');
+(1, 'Bệnh viện Chợ Rẫy'),
+(2, 'Bệnh viện 115'),
+(3, 'Bệnh viện Nhi Đồng 1'),
+(4, 'Bệnh viện Từ Dũ'),
+(5, 'Bệnh viện Tai Mũi Họng');
 
 -- --------------------------------------------------------
 
@@ -157,8 +153,7 @@ INSERT INTO `benhvien` (`id`, `ten`) VALUES
 CREATE TABLE `chinhanh` (
   `id` int(11) NOT NULL,
   `diachi` varchar(500) DEFAULT NULL,
-  `id_bv` int(11) NOT NULL,
-  `token` text NOT NULL
+  `id_bv` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -166,11 +161,16 @@ CREATE TABLE `chinhanh` (
 --
 
 INSERT INTO `chinhanh` (`id`, `diachi`, `id_bv`) VALUES
-(1, 'Số 1, Phố Chùa Bộc, Đống Đa, Hà Nội', 1),
-(2, '78 Đường Giải Phóng, Phương Mai, Đống Đa, Hà Nội', 2),
-(3, '40 Tràng Thi, Hoàn Kiếm, Hà Nội', 3),
-(4, '16 Lê Lợi, TP. Huế, Thừa Thiên Huế', 4),
-(5, 'Số 1 Đại lộ Lê Nin, Thành phố Bắc Ninh, Bắc Ninh', 5);
+(1, '1 Le Loi, District 1, HCMC', 1),
+(2, '2 Hai Ba Trung, District 3, HCMC', 1),
+(3, '3 Nguyen Trai, District 5, HCMC', 2),
+(4, '4 Vo Van Tan, District 1, HCMC', 2),
+(5, '5 Le Thanh Ton, District 1, HCMC', 3),
+(6, '6 Dong Khoi, District 1, HCMC', 3),
+(7, '7 Pasteur, District 3, HCMC', 4),
+(8, '8 Nguyen Dinh Chieu, District 3, HCMC', 4),
+(9, '9 Pham Ngu Lao, District 1, HCMC', 5),
+(10, '10 Le Van Sy, District 3, HCMC', 5);
 
 -- --------------------------------------------------------
 
@@ -192,15 +192,69 @@ CREATE TABLE `donthuoc` (
 --
 
 INSERT INTO `donthuoc` (`id`, `id_ba`, `ten`, `dvt`, `sl`, `hdsd`) VALUES
-(1, 1, 'Paracetamol', 'viên', 1, 'Ngày uống 3 lần sau bữa ăn'),
-(2, 1, 'Vitamin C', 'viên', 1, 'Ngày uống 1 viên vào buổi sáng'),
-(3, 1, 'Salbutamol', 'viên', 1, 'Dùng khi cần thiết để giảm triệu chứng hen suyễn'),
-(4, 2, 'Metformin', 'viên', 1, 'Ngày uống 2 lần sau bữa ăn'),
-(5, 2, 'Gliclazide', 'viên', 1, 'Ngày uống 1 viên vào buổi sáng'),
-(6, 2, 'Ramipril', 'viên', 1, 'Ngày uống 1 viên vào buổi tối'),
-(7, 3, 'Omeprazole', 'viên', 1, 'Ngày uống 1 viên trước bữa ăn sáng'),
-(8, 3, 'Domperidone', 'viên', 1, 'Ngày uống 1 viên trước bữa ăn chiều'),
-(9, 3, 'Sucralfate', 'viên', 1, 'Ngày uống 1 viên trước bữa ăn tối');
+(1, 17, 'Paracetamol', 'Viên', 20, 'Uống 1 viên mỗi 6 giờ'),
+(2, 17, 'Ibuprofen', 'Viên', 15, 'Uống 1 viên mỗi 8 giờ'),
+(3, 17, 'Amoxicillin', 'Viên', 10, 'Uống 1 viên mỗi 12 giờ'),
+(4, 17, 'Vitamin C', 'Viên', 30, 'Uống 1 viên mỗi ngày');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `khoa`
+--
+
+CREATE TABLE `khoa` (
+  `id` int(11) NOT NULL,
+  `ten` varchar(255) NOT NULL,
+  `mota` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `khoa`
+--
+
+INSERT INTO `khoa` (`id`, `ten`, `mota`) VALUES
+(1, 'Khoa Nội', 'Chuyên về các bệnh nội khoa'),
+(2, 'Khoa Ngoại', 'Chuyên về các bệnh ngoại khoa'),
+(3, 'Khoa Nhi', 'Chuyên về các bệnh nhi khoa'),
+(4, 'Khoa Sản', 'Chuyên về các bệnh sản khoa'),
+(5, 'Khoa Tai Mũi Họng', 'Chuyên về các bệnh tai mũi họng'),
+(6, 'Khoa Mắt', 'Chuyên về các bệnh về mắt'),
+(7, 'Khoa Tim mạch', 'Chuyên về các bệnh tim mạch'),
+(8, 'Khoa Da liễu', 'Chuyên về các bệnh da liễu'),
+(9, 'Khoa Thần kinh', 'Chuyên về các bệnh thần kinh'),
+(10, 'Khoa Tiêu hóa', 'Chuyên về các bệnh tiêu hóa');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `kqxn`
+--
+
+CREATE TABLE `kqxn` (
+  `id` int(11) NOT NULL,
+  `id_ba` int(11) NOT NULL,
+  `ten` varchar(255) NOT NULL,
+  `mota` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `kqxn`
+--
+
+INSERT INTO `kqxn` (`id`, `id_ba`, `ten`, `mota`) VALUES
+(1, 4, 'Xét nghiệm máu', 'Kết quả bình thường'),
+(2, 7, 'Xét nghiệm máu', 'Kết quả bình thường'),
+(3, 8, 'Xét nghiệm họng', 'Tăng bạch cầu'),
+(4, 9, 'Xét nghiệm dị ứng', 'Phản ứng dương tính với phấn hoa'),
+(5, 10, 'Xét nghiệm dạ dày', 'Đau dạ dày'),
+(6, 11, 'Xét nghiệm xương', 'Gãy xương tay'),
+(7, 12, 'Xét nghiệm máu', 'Bình thường'),
+(8, 13, 'Xét nghiệm phổi', 'Khô'),
+(9, 14, 'Xét nghiệm máu', 'Thiếu máu'),
+(10, 15, 'Xét nghiệm khớp', 'Viêm khớp'),
+(11, 16, 'Xét nghiệm máu', 'Có dấu hiệu cảm lạnh'),
+(12, 17, 'Xét nghiệm máu', 'Kết quả bình thường');
 
 -- --------------------------------------------------------
 
@@ -212,8 +266,7 @@ CREATE TABLE `login` (
   `id` int(11) NOT NULL,
   `cccd` varchar(12) NOT NULL,
   `pass` varchar(255) NOT NULL,
-  `role` tinyint(1) DEFAULT 0,
-  `token` text NOT NULL,
+  `role` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -221,16 +274,54 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `cccd`, `pass`, `role`) VALUES
-(1, '123456789011', 'password1', 0),
-(2, '123456789012', 'password2', 0),
-(3, '123456789013', 'password3', 0),
-(4, '123456789014', 'password4', 0),
-(5, '123456789015', 'password5', 0),
-(6, '123456789101', 'password6', 1),
-(7, '123456789102', 'password7', 1),
-(8, '123456789103', 'password8', 1),
-(9, '123456789104', 'password9', 1),
-(10, '123456789105', 'password10', 1);
+(1, '079304011052', 'ttgn822004', 1),
+(2, '012345678901', 'password1', 1),
+(3, '012345678902', 'password2', 1),
+(4, '012345678903', 'password3', 1),
+(5, '012345678904', 'password4', 1),
+(6, '012345678905', 'password5', 1),
+(7, '012345678906', 'password6', 1),
+(8, '012345678907', 'password7', 1),
+(9, '012345678908', 'password8', 1),
+(10, '012345678909', 'password9', 1),
+(11, '012345678910', 'password10', 1),
+(12, '012345678911', 'password11', 1),
+(13, '012345678912', 'password12', 1),
+(14, '012345678913', 'password13', 1),
+(15, '012345678914', 'password14', 1),
+(16, '012345678915', 'password15', 1),
+(17, '012345678916', 'password16', 1),
+(18, '012345678917', 'password17', 1),
+(19, '012345678918', 'password18', 1),
+(20, '012345678919', 'password19', 1),
+(21, '012345678920', 'password20', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `xquang`
+--
+
+CREATE TABLE `xquang` (
+  `id` int(11) NOT NULL,
+  `id_ba` int(11) NOT NULL,
+  `ten` varchar(255) NOT NULL,
+  `mota` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `xquang`
+--
+
+INSERT INTO `xquang` (`id`, `id_ba`, `ten`, `mota`) VALUES
+(1, 4, 'X-quang ngực', 'Có dấu hiệu viêm phổi'),
+(2, 7, 'X-quang ngực', 'Có dấu hiệu viêm phổi'),
+(3, 10, 'X-quang bụng', 'Không phát hiện bất thường'),
+(4, 11, 'X-quang tay', 'Xương gãy'),
+(5, 12, 'X-quang đầu', 'Không có dấu hiệu bất thường'),
+(6, 13, 'X-quang ngực', 'Có dấu hiệu viêm phổi'),
+(7, 15, 'X-quang khớp', 'Phát hiện viêm'),
+(8, 17, 'Chụp X-quang ngực', 'Có dấu hiệu viêm phổi');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -241,7 +332,8 @@ INSERT INTO `login` (`id`, `cccd`, `pass`, `role`) VALUES
 --
 ALTER TABLE `bacsi`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_cn` (`id_cn`);
+  ADD KEY `id_cn` (`id_cn`),
+  ADD KEY `id_k` (`id_k`);
 
 --
 -- Chỉ mục cho bảng `benhan`
@@ -279,11 +371,31 @@ ALTER TABLE `donthuoc`
   ADD KEY `id_ba` (`id_ba`);
 
 --
+-- Chỉ mục cho bảng `khoa`
+--
+ALTER TABLE `khoa`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `kqxn`
+--
+ALTER TABLE `kqxn`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `kqxn_ibfk_1` (`id_ba`);
+
+--
 -- Chỉ mục cho bảng `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `cccd` (`cccd`);
+
+--
+-- Chỉ mục cho bảng `xquang`
+--
+ALTER TABLE `xquang`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `xquang_ibfk_1` (`id_ba`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -293,19 +405,19 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT cho bảng `bacsi`
 --
 ALTER TABLE `bacsi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `benhan`
 --
 ALTER TABLE `benhan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `benhnhan`
 --
 ALTER TABLE `benhnhan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `benhvien`
@@ -317,19 +429,37 @@ ALTER TABLE `benhvien`
 -- AUTO_INCREMENT cho bảng `chinhanh`
 --
 ALTER TABLE `chinhanh`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `donthuoc`
 --
 ALTER TABLE `donthuoc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT cho bảng `khoa`
+--
+ALTER TABLE `khoa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT cho bảng `kqxn`
+--
+ALTER TABLE `kqxn`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT cho bảng `xquang`
+--
+ALTER TABLE `xquang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -339,7 +469,8 @@ ALTER TABLE `login`
 -- Các ràng buộc cho bảng `bacsi`
 --
 ALTER TABLE `bacsi`
-  ADD CONSTRAINT `bacsi_ibfk_1` FOREIGN KEY (`id_cn`) REFERENCES `chinhanh` (`id`);
+  ADD CONSTRAINT `bacsi_ibfk_1` FOREIGN KEY (`id_cn`) REFERENCES `chinhanh` (`id`),
+  ADD CONSTRAINT `bacsi_ibfk_2` FOREIGN KEY (`id_k`) REFERENCES `khoa` (`id`);
 
 --
 -- Các ràng buộc cho bảng `benhan`
@@ -359,6 +490,18 @@ ALTER TABLE `chinhanh`
 --
 ALTER TABLE `donthuoc`
   ADD CONSTRAINT `donthuoc_ibfk_1` FOREIGN KEY (`id_ba`) REFERENCES `benhan` (`id`);
+
+--
+-- Các ràng buộc cho bảng `kqxn`
+--
+ALTER TABLE `kqxn`
+  ADD CONSTRAINT `kqxn_ibfk_1` FOREIGN KEY (`id_ba`) REFERENCES `benhan` (`id`);
+
+--
+-- Các ràng buộc cho bảng `xquang`
+--
+ALTER TABLE `xquang`
+  ADD CONSTRAINT `xquang_ibfk_1` FOREIGN KEY (`id_ba`) REFERENCES `benhan` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
